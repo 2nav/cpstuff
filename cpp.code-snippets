@@ -8,168 +8,162 @@
 	// Example:
 	"CPP Competitive Programming Template": {
 		"scope": "cpp",
-        "prefix": "cpp",
-        "body": [
-            "#include \"bits/stdc++.h\"",
-            "#include <ext/pb_ds/assoc_container.hpp>",
-            "#include <ext/pb_ds/tree_policy.hpp>",
-            "",
-            "// #define LOCAL //Comment in if custom header not set //Comment out when submitting",
-            "#define endl '\\n' //Comment out if interactive",
-            "#define int long long //Comment out if memory exceeds",
-            "",
+		"prefix": "cpp",
+		"body": [
+			"#include \"bits/stdc++.h\"",
+			"#include <ext/pb_ds/assoc_container.hpp>",
+			"#include <ext/pb_ds/tree_policy.hpp>",
+			"",
+			"// #define LOCAL //Comment in if custom header not set //Comment out when submitting",
+			"#define endl '\\n' //Comment out if interactive",
+			"#define int long long //Comment out if memory exceeds",
+			"",
 			"#ifdef LOCAL",
 			"#include \"debugging.h\"",
 			"#endif",
 			"",
-            "using namespace std;",
-            "",
-            "//const int MOD=1000000007; //Comment in if the question asks to take mod by this number",
-            "",
-            "void solve() {",
-            "    //Write your solution here",
-            "}",
-            "",
-            "signed main() {",
-            "    ios::sync_with_stdio(false);",
-            "    cin.tie(NULL); cout.tie(NULL);",
-            "    #ifdef LOCAL",
-            "        freopen(\"input.txt\", \"r\", stdin);",
-            "        freopen(\"output.txt\", \"w\", stdout);",
-            "        auto start_timer = chrono::high_resolution_clock::now();",
-            "    #endif",
-            "",
-            "    int t=1;",
-            "    cin>>t; //Comment out if a single test case",
-            "    while (t--) {",
-            "        solve();",
-            "    }",
-            "",
-            "    #ifdef LOCAL",
-            "        auto stop_timer = chrono::high_resolution_clock::now();",
-            "        auto duration = chrono::duration_cast<chrono::nanoseconds>(stop_timer - start_timer);",
-            "        cerr << \"Time taken : \" << ((long double)duration.count())/((long double) 1e9) <<\"s \"<< endl;",
-            "    #endif",
-            "    return 0;",
-            "}"
-        ],
-        "description": "C++ Competitive Programming Template"
-    },
+			"using namespace std;",
+			"",
+			"//const int MOD=1000000007; //Comment in if the question asks to take mod by this number",
+			"",
+			"void solve() {",
+			"    //Write your solution here",
+			"\t$0",
+			"}",
+			"",
+			"signed main() {",
+			"    ios::sync_with_stdio(false);",
+			"    cin.tie(NULL); cout.tie(NULL);",
+			"    #ifdef LOCAL",
+			"        freopen(\"input.txt\", \"r\", stdin);",
+			"        freopen(\"output.txt\", \"w\", stdout);",
+			"        auto start_timer = chrono::high_resolution_clock::now();",
+			"    #endif",
+			"",
+			"    int t=1;",
+			"    cin>>t; //Comment out if a single test case",
+			"    while (t--) {",
+			"        solve();",
+			"    }",
+			"",
+			"    #ifdef LOCAL",
+			"        auto stop_timer = chrono::high_resolution_clock::now();",
+			"        auto duration = chrono::duration_cast<chrono::nanoseconds>(stop_timer - start_timer);",
+			"        cerr << \"Time taken : \" << ((long double)duration.count())/((long double) 1e9) <<\"s \"<< endl;",
+			"    #endif",
+			"    return 0;",
+			"}"
+		],
+		"description": "C++ Competitive Programming Template"
+	},
 	"Custom Fast Power Function": {
 		"scope": "cpp",
-        "prefix": "fastpow",
-        "body": [
-            "// use only for non-negative a, b",
-            "int fastpow(int a, int b, int mod)",
-            "{",
-            "    int ans = 1;",
-            "    while(b > 0){",
-            "        if(b & 1)",
-            "            ans = (ans * a)%mod;",
-            "        a=(a*a)%mod;",
-            "        b>>=1;",
-            "    }",
-            "    return ans;",
-            "}"
-        ],
-        "description": "Custom function for power of integers with mod using loop and mod"
-    },
-		"Custom Fast Power Function (Loop)": {
-			"scope": "cpp",
-			"prefix": "fpow",
-			"body": [
-				"// use only for non-negative a, b",
-				"int fastpow(int a, int b) {",
-				"    int ans = 1;",
-				"    while (b > 0) {",
-				"        if (b & 1)",
-				"            ans *= a;",
-				"        a *= a;",
-				"        b >>= 1;",
-				"    }",
-				"    return ans;",
-				"}"
-			],
-			"description": "Custom function for power of integers using loop"
+		"prefix": "fastpow",
+		"body": [
+			"// use only for non-negative a, b",
+			"int fastpow(int a, int b, int mod)",
+			"{",
+			"    int ans = 1;",
+			"    while(b > 0){",
+			"        if(b & 1)",
+			"            ans = (ans * a)%mod;",
+			"        a=(a*a)%mod;",
+			"        b>>=1;",
+			"    }",
+			"    return ans;",
+			"}"
+		],
+		"description": "Custom function for power of integers with mod using loop and mod"
 	},
-	
-		"Custom GCD Function (Integer)": {
-			"scope": "cpp",
-			"prefix": "fgcdi",
-			"body": [
-				"// use only for non-negative u, v",
-				"int gcd(int u, int v) {",
-				"    int shift;",
-				"    if (u == 0 || v == 0) return v + u;",
-				"    shift = __builtin_ctz(u | v);",
-				"    u >>= __builtin_ctz(u);",
-				"    do {",
-				"        v >>= __builtin_ctz(v);",
-				"        if (u > v) {",
-				"            swap(u, v);",
-				"        }",
-				"        v -= u;",
-				"    } while (v);",
-				"    return u << shift;",
-				"}"
-			],
-			"description": "Custom function for GCD of integer"
+	"Custom Fast Power Function (Loop)": {
+		"scope": "cpp",
+		"prefix": "fpow",
+		"body": [
+			"// use only for non-negative a, b",
+			"int fastpow(int a, int b) {",
+			"    int ans = 1;",
+			"    while (b > 0) {",
+			"        if (b & 1)",
+			"            ans *= a;",
+			"        a *= a;",
+			"        b >>= 1;",
+			"    }",
+			"    return ans;",
+			"}"
+		],
+		"description": "Custom function for power of integers using loop"
 	},
-	
-		"Custom GCD Function (Long Long)": {
-			"scope": "cpp",
-			"prefix": "fgcdll",
-			"body": [
-				"// use only for non-negative u, v",
-				"long long gcd(long long u, long long v) {",
-				"    int shift;",
-				"    if (u == 0 || v == 0) return u + v;",
-				"    shift = __builtin_ctzll(u | v);",
-				"    u >>= __builtin_ctzll(u);",
-				"    do {",
-				"        v >>= __builtin_ctzll(v);",
-				"        if (u > v) {",
-				"            swap(u, v);",
-				"        }",
-				"        v -= u;",
-				"    } while (v);",
-				"    return u << shift;",
-				"}"
-			],
-			"description": "Custom function for GCD of long long"
-		
+	"Custom GCD Function (Integer)": {
+		"scope": "cpp",
+		"prefix": "fgcdi",
+		"body": [
+			"// use only for non-negative u, v",
+			"int gcd(int u, int v) {",
+			"    int shift;",
+			"    if (u == 0 || v == 0) return v + u;",
+			"    shift = __builtin_ctz(u | v);",
+			"    u >>= __builtin_ctz(u);",
+			"    do {",
+			"        v >>= __builtin_ctz(v);",
+			"        if (u > v) {",
+			"            swap(u, v);",
+			"        }",
+			"        v -= u;",
+			"    } while (v);",
+			"    return u << shift;",
+			"}"
+		],
+		"description": "Custom function for GCD of integer"
 	},
-	
-		"Input Array": {
-			"scope": "cpp",
-			"prefix": "ina",
-			"body": [
-				"for (int i = 0; i < ${1:n}; i++) {",
-				"    cin >> ${2:A}[i];",
-				"}",
-				"$0"
-			],
-			"description": "Input Array"
-		},
-		"C++ For Loop": {
-			"prefix": "rep",
-			"body": [
-				"for (int ${1:i} = ${2:0}; ${1:i} < ${3:n}; ${1:i}++) {",
-				"\t$0",
-				"}"
-			],
-			"description": "C++ For Loop",
-			"scope": "cpp"
-		},
-		"Pair Declaration": {
-			"prefix": "pii",
-			"body": [
-				"pair<int, int>"
-			],
-			"description": "Pair Declaration",
-			"scope": "cpp"
-		}
-	
-	
-
+	"Custom GCD Function (Long Long)": {
+		"scope": "cpp",
+		"prefix": "fgcdll",
+		"body": [
+			"// use only for non-negative u, v",
+			"long long gcd(long long u, long long v) {",
+			"    int shift;",
+			"    if (u == 0 || v == 0) return u + v;",
+			"    shift = __builtin_ctzll(u | v);",
+			"    u >>= __builtin_ctzll(u);",
+			"    do {",
+			"        v >>= __builtin_ctzll(v);",
+			"        if (u > v) {",
+			"            swap(u, v);",
+			"        }",
+			"        v -= u;",
+			"    } while (v);",
+			"    return u << shift;",
+			"}"
+		],
+		"description": "Custom function for GCD of long long"
+	},
+	"Input Array": {
+		"scope": "cpp",
+		"prefix": "ina",
+		"body": [
+			"for (int i = 0; i < ${1:n}; i++) {",
+			"    cin >> ${2:A}[i];",
+			"}",
+			"$0"
+		],
+		"description": "Input Array"
+	},
+	"C++ For Loop": {
+		"prefix": "rep",
+		"body": [
+			"for (int ${1:i} = ${2:0}; ${1:i} < ${3:n}; ${1:i}++) {",
+			"\t$0",
+			"}"
+		],
+		"description": "C++ For Loop",
+		"scope": "cpp"
+	},
+	"Pair Declaration": {
+		"prefix": "pii",
+		"body": [
+			"pair<int, int>"
+		],
+		"description": "Pair Declaration",
+		"scope": "cpp"
+	}
 }
